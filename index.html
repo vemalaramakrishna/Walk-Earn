@@ -60,11 +60,16 @@
         <h1>Turn Your Steps Into <br><span>Real Rewards</span></h1>
         <p>Join millions of users who are getting fit and earning coins every day. Track your steps, challenge friends
             in 1v1 duels, refer friends to earn ₹1.00 each, and redeem rewards.</p>
-        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <div class="hero-actions">
             <a href="WalkEarn.apk" download class="cta-button" id="download" download="WalkEarn.apk">
                 <span style="margin-right: 0.5rem;">📥</span>
                 Download WalkEarn APK
             </a>
+            <div class="qr-container">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://vemalaramakrishna.github.io/Walk-Earn/WalkEarn.apk"
+                    alt="Scan to download WalkEarn" class="qr-code">
+                <span>Scan to Download</span>
+            </div>
         </div>
     </section>
 
@@ -104,6 +109,46 @@
                 boost your earnings together.
             </p>
         </article>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Walkers Say</h2>
+        <div class="testimonials-grid">
+            <article class="testimonial-card">
+                <div class="quote">"I've tried many walking apps, but WalkEarn is the only one that actually pays out. I
+                    earned ₹500 in my first month just by walking to work!"</div>
+                <div class="user-info">
+                    <span class="avatar">👨</span>
+                    <div>
+                        <div class="name">Rahul S.</div>
+                        <div class="location">Mumbai, India</div>
+                    </div>
+                </div>
+            </article>
+            <article class="testimonial-card">
+                <div class="quote">"The 1v1 duels keep me motivated. I challenge my friends every day, and it's so much
+                    fun to win coins while getting fit!"</div>
+                <div class="user-info">
+                    <span class="avatar">👩</span>
+                    <div>
+                        <div class="name">Priyanka K.</div>
+                        <div class="location">Bangalore, India</div>
+                    </div>
+                </div>
+            </article>
+            <article class="testimonial-card">
+                <div class="quote">"Referral program is amazing! I invited 10 friends and got ₹10 instantly. It's the
+                    easiest way to earn side pocket money."</div>
+                <div class="user-info">
+                    <span class="avatar">🧑</span>
+                    <div>
+                        <div class="name">Amit V.</div>
+                        <div class="location">Delhi, India</div>
+                    </div>
+                </div>
+            </article>
+        </div>
     </section>
 
     <!-- How It Works Section -->
@@ -167,6 +212,41 @@
             <div class="stat-item">
                 <div class="stat-number">4.8★</div>
                 <div class="stat-label">App Rating</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">Is WalkEarn really free?<span>+</span></button>
+                <div class="faq-answer">
+                    <p>Yes, WalkEarn is 100% free to download and use. You earn rewards simply by staying active. We
+                        support our rewards program through minimal ads.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">How do I get paid?<span>+</span></button>
+                <div class="faq-answer">
+                    <p>You can redeem your Walk Coins for real cash via UPI, Bank Transfer, or popular Gift Cards. Once
+                        you request a withdrawal, it's processed within 7-14 business days.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Does it drain my battery?<span>+</span></button>
+                <div class="faq-answer">
+                    <p>No! Our step tracking technology is optimized for low battery consumption. It runs in the
+                        background using minimal resources, similar to your phone's built-in pedometer.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What is a 1v1 Duel?<span>+</span></button>
+                <div class="faq-answer">
+                    <p>A Duel is a friendly competition where you stake a certain amount of coins against another user.
+                        The person who walks most steps in the given time wins the entire pot!</p>
+                </div>
             </div>
         </div>
     </section>
@@ -247,6 +327,14 @@
                 menuToggle.setAttribute('aria-expanded', 'false');
                 navLinks.classList.remove('active');
                 menuToggle.classList.remove('active');
+            });
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                faqItem.classList.toggle('active');
             });
         });
 

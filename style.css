@@ -202,6 +202,54 @@ nav {
     line-height: 1.7;
 }
 
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: var(--spacing-lg);
+}
+
+.qr-container {
+    background: var(--card-bg);
+    padding: 0.75rem;
+    border-radius: 16px;
+    border: var(--glass-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.qr-container:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-primary);
+}
+
+.qr-code {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    background: white;
+    padding: 5px;
+}
+
+.qr-container span {
+    font-size: var(--font-xs);
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 480px) {
+    .qr-container {
+        display: none;
+        /* Hide QR on mobile since they already are on mobile */
+    }
+}
+
 .hero .cta-button {
     font-size: var(--font-base);
     padding: 1rem 2rem;
@@ -497,6 +545,159 @@ footer a {
 
 footer a:hover {
     color: var(--accent-primary);
+}
+
+/* ===================================
+   TESTIMONIALS SECTION
+   =================================== */
+
+.testimonials {
+    padding: var(--spacing-2xl) var(--spacing-md);
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: var(--spacing-xl);
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.testimonial-card {
+    background: var(--card-bg);
+    border: var(--glass-border);
+    padding: var(--spacing-xl);
+    border-radius: 20px;
+    text-align: left;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-primary);
+}
+
+.testimonial-card .quote {
+    font-style: italic;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-sm);
+    line-height: 1.8;
+}
+
+.testimonial-card .user-info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.testimonial-card .avatar {
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-card .name {
+    font-weight: 700;
+    font-size: var(--font-base);
+}
+
+.testimonial-card .location {
+    color: var(--text-secondary);
+    font-size: var(--font-xs);
+}
+
+/* ===================================
+   FAQ SECTION
+   =================================== */
+
+.faq {
+    padding: var(--spacing-2xl) var(--spacing-md);
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.faq h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: var(--spacing-xl);
+    color: var(--text-primary);
+}
+
+.faq-container {
+    text-align: left;
+}
+
+.faq-item {
+    background: var(--card-bg);
+    border: var(--glass-border);
+    border-radius: 12px;
+    margin-bottom: var(--spacing-sm);
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: var(--font-base);
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.faq-question:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.faq-question span {
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.faq-item.active .faq-question span {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    padding: 0 var(--spacing-lg) var(--spacing-md);
+}
+
+.faq-answer p {
+    color: var(--text-secondary);
+    font-size: var(--font-sm);
+    line-height: 1.6;
 }
 
 /* ===================================
